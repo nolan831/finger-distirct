@@ -3,247 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FREE RIDER - Fingerboard Shop</title>
+<title>FREE RIDER - Fingerboards</title>
+
 <style>
-* { box-sizing:border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  background:#09090d;
-  color:white;
-  font-family:Arial,sans-serif;
+  margin: 0;
+  background: #101014;
+  color: white;
+  font-family: Arial, sans-serif;
 }
+
 header {
-  padding:28px 15px;
-  text-align:center;
-  background:linear-gradient(120deg,#180b12,#250b35,#100b18);
-  border-bottom:2px solid #ed174c;
+  background: linear-gradient(90deg, #25002f, #85002e);
+  padding: 28px 15px;
+  text-align: center;
 }
-.logo {
-  font-size:42px;
-  font-weight:1000;
-  letter-spacing:4px;
-  color:white;
-  text-shadow:3px 3px #ed174c, -2px -2px #8b35ff;
+
+header h1 {
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: 4px;
 }
-header p { color:#ccc; }
+
+header p {
+  color: #eee;
+}
+
 nav {
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  padding:15px;
-  background:#15151c;
-  flex-wrap:wrap;
+  background: #1c1c24;
+  padding: 15px;
+  text-align: center;
 }
-nav a { color:white; text-decoration:none; font-weight:bold; }
-nav a:hover { color:#bd65ff; }
-.hero {
-  text-align:center;
-  padding:55px 15px;
-  background:radial-gradient(circle,#351044,#111019 65%);
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
 }
-.hero h1 { font-size:38px; }
-.hero span { color:#e63870; }
-.hero p { color:#ccc; }
-section { padding:25px 18px; max-width:1100px; margin:auto; }
+
+nav a:hover {
+  color: #ff315b;
+}
+
+section {
+  padding: 25px 15px;
+  max-width: 1100px;
+  margin: auto;
+}
+
 h2 {
-  border-left:5px solid #e63870;
-  padding-left:12px;
+  color: #ff315b;
+  text-align: center;
 }
+
 .brands {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+  text-align: center;
+  color: #c7a0ff;
+  font-size: 18px;
 }
-.brand {
-  background:#1b1923;
-  border:1px solid #7135a0;
-  padding:14px 20px;
-  border-radius:10px;
-  font-weight:bold;
-}
+
 .products {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
+
 .product {
-  background:#171720;
-  border:1px solid #34303d;
-  border-radius:14px;
-  padding:18px;
-  text-align:center;
+  background: #202029;
+  border: 1px solid #63306e;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
 }
-.product:hover {
-  border-color:#bd45ff;
-  transform:translateY(-3px);
+
+.product img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  background: #171720;
+  border-radius: 8px;
 }
-.picture {
-  background:linear-gradient(135deg,#351044,#18121f);
-  border-radius:12px;
-  padding:22px;
-  font-size:55px;
+
+.product h3 {
+  margin-bottom: 8px;
 }
-.product h3 { margin-bottom:5px; }
-.maker { color:#bd75ff; font-size:13px; }
-.price { color:#ff557d; font-size:22px; font-weight:bold; }
+
+.price {
+  color: #ff5278;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 button {
-  border:0;
-  padding:12px 17px;
-  border-radius:8px;
-  background:linear-gradient(90deg,#e52353,#8d36dd);
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
+  background: #a00046;
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
 }
-button:hover { opacity:.85; }
+
+button:hover {
+  background: #e00062;
+}
+
 .cart {
-  background:#171720;
-  padding:20px;
-  border-radius:14px;
-  border:1px solid #7135a0;
+  background: #202029;
+  padding: 20px;
+  border-radius: 12px;
 }
+
 .cart-item {
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:10px 0;
-  border-bottom:1px solid #38333f;
+  border-bottom: 1px solid #555;
+  padding: 10px 0;
 }
-.remove {
-  background:#9c2440;
-  padding:6px 10px;
-}
+
 footer {
-  text-align:center;
-  padding:30px;
-  background:#15151c;
-  color:#aaa;
-  margin-top:35px;
+  text-align: center;
+  padding: 25px;
+  background: #1c1c24;
+  color: #aaa;
 }
-.small { color:#aaa; font-size:13px; }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">FREE RIDER</div>
-  <p>YOUR FINGERBOARD UNIVERSE 🛹</p>
+  <h1>FREE RIDER</h1>
+  <p>La passion du fingerboard commence ici !</p>
 </header>
 
 <nav>
   <a href="#accueil">Accueil</a>
-  <a href="#marques">Marques</a>
   <a href="#produits">Produits</a>
-  <a href="#panier">Mon panier 🛒</a>
+  <a href="#panier">Panier</a>
 </nav>
 
-<div class="hero" id="accueil">
-  <h1>WELCOME TO <span>FREE RIDER</span></h1>
-  <p>Discover your next favorite fingerboard.</p>
-  <button onclick="document.getElementById('produits').scrollIntoView()">
-    DÉCOUVRIR LA BOUTIQUE
-  </button>
-</div>
+<section id="accueil">
+  <h2>Bienvenue chez FREE RIDER</h2>
+  <p style="text-align:center">
+    Découvre notre sélection de fingerboards et d'accessoires.
+  </p>
 
-<section id="marques">
-  <h2>🔥 NOS MARQUES</h2>
-  <div class="brands">
-    <div class="brand">BLACKRIVER</div>
-    <div class="brand">TECH DECK</div>
-    <div class="brand">DK FINGERBOARDS</div>
-    <div class="brand">BERLINWOOD</div>
-  </div>
+  <p class="brands">
+    BLACKRIVER • TECH DECK • DK FINGERBOARDS • BERLINWOOD
+  </p>
 </section>
 
 <section id="produits">
-  <h2>🛹 NOS PRODUITS</h2>
-  <p class="small">Prix et produits présentés à titre d'exemple.</p>
+  <h2>Nos produits</h2>
   <div class="products" id="product-list"></div>
 </section>
 
 <section id="panier">
-  <h2>🛒 MON PANIER</h2>
+  <h2>🛒 Mon panier</h2>
   <div class="cart">
-    <div id="cart-items">Ton panier est vide.</div>
-    <h3>Total : <span id="total">0,00 $</span> CAD</h3>
-    <button onclick="checkout()">CONTINUER</button>
-    <p class="small">Le paiement en ligne sera ajouté plus tard.</p>
+    <div id="cart-list">Ton panier est vide.</div>
+    <h3 id="total">Total : 0,00 $</h3>
+    <button onclick="checkout()">Passer à la commande</button>
+    <p id="checkout-message"></p>
   </div>
 </section>
 
 <footer>
-  <h2>FREE RIDER 🛹</h2>
-  <p>Ride your own way.</p>
-  <p>© 2026 FREE RIDER</p>
+  © 2026 FREE RIDER - Tous droits réservés
 </footer>
 
 <script>
 const products = [
- {id:1,name:"Fingerboard Pro",brand:"BLACKRIVER",price:49.99,emoji:"🛹"},
- {id:2,name:"Classic Fingerboard",brand:"TECH DECK",price:12.99,emoji:"🏁"},
- {id:3,name:"Wooden Deck",brand:"DK FINGERBOARDS",price:29.99,emoji:"🪵"},
- {id:4,name:"Premium Deck",brand:"BERLINWOOD",price:39.99,emoji:"🔥"},
- {id:5,name:"Wheels Pack",brand:"BLACKRIVER",price:14.99,emoji:"🛞"},
- {id:6,name:"Fingerboard Trucks",brand:"DK FINGERBOARDS",price:19.99,emoji:"⚙️"}
+  {
+    id: 1,
+    name: "Fingerboard Tech Deck",
+    brand: "Tech Deck",
+    price: 12.99,
+    image: "https://placehold.co/500x350/171720/ffffff?text=Tech+Deck"
+  },
+  {
+    id: 2,
+    name: "Fingerboard Blackriver",
+    brand: "Blackriver",
+    price: 49.99,
+    image: "https://placehold.co/500x350/171720/ffffff?text=Blackriver"
+  },
+  {
+    id: 3,
+    name: "Fingerboard DK",
+    brand: "DK Fingerboards",
+    price: 39.99,
+    image: "https://placehold.co/500x350/171720/ffffff?text=DK+Fingerboards"
+  },
+  {
+    id: 4,
+    name: "Fingerboard Berlinwood",
+    brand: "Berlinwood",
+    price: 44.99,
+    image: "https://placehold.co/500x350/171720/ffffff?text=Berlinwood"
+  },
+  {
+    id: 5,
+    name: "Rampe Fingerboard",
+    brand: "Accessoire",
+    price: 24.99,
+    image: "https://placehold.co/500x350/171720/ffffff?text=Rampe"
+  },
+  {
+    id: 6,
+    name: "Pack de roues",
+    brand: "Accessoire",
+    price: 9.99,
+    image: "https://placehold.co/500x350/171720/ffffff?text=Roues"
+  }
 ];
 
 let cart = JSON.parse(localStorage.getItem("frCart") || "[]");
 
-const money = value => value.toLocaleString("fr-CA", {
- style:"currency", currency:"CAD"
-});
+function money(value) {
+  return value.toLocaleString("fr-CA", {
+    style: "currency",
+    currency: "CAD"
+  });
+}
 
 function showProducts() {
- document.getElementById("product-list").innerHTML =
- products.map(p => `
- <div class="product">
-   <div class="picture">${p.emoji}</div>
-   <p class="maker">${p.brand}</p>
-   <h3>${p.name}</h3>
-   <p class="price">${money(p.price)}</p>
-   <button onclick="addToCart(${p.id})">AJOUTER AU PANIER</button>
- </div>
- `).join("");
+  document.getElementById("product-list").innerHTML =
+    products.map(p => `
+      <div class="product">
+        <img src="${p.image}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>${p.brand}</p>
+        <p class="price">${money(p.price)}</p>
+        <button onclick="addToCart(${p.id})">
+          Ajouter au panier
+        </button>
+      </div>
+    `).join("");
 }
 
 function addToCart(id) {
- const product = products.find(p => p.id === id);
- cart.push(product);
- saveCart();
+  cart.push(id);
+  saveCart();
 }
 
 function removeFromCart(index) {
- cart.splice(index,1);
- saveCart();
+  cart.splice(index, 1);
+  saveCart();
 }
 
 function saveCart() {
- localStorage.setItem("frCart",JSON.stringify(cart));
- showCart();
+  localStorage.setItem("frCart", JSON.stringify(cart));
+  showCart();
 }
 
 function showCart() {
- const area = document.getElementById("cart-items");
- if(cart.length === 0) {
-   area.textContent = "Ton panier est vide.";
- } else {
-   area.innerHTML = cart.map((p,i) => `
-     <div class="cart-item">
-       <span>${p.emoji} ${p.name} - ${money(p.price)}</span>
-       <button class="remove" onclick="removeFromCart(${i})">Retirer</button>
-     </div>
-   `).join("");
- }
- const total = cart.reduce((sum,p) => sum + p.price,0);
- document.getElementById("total").textContent = money(total);
+  const list = document.getElementById("cart-list");
+
+  if (cart.length === 0) {
+    list.innerHTML = "Ton panier est vide.";
+  } else {
+    list.innerHTML = cart.map((id, index) => {
+      const product = products.find(p => p.id === id);
+
+      return `
+        <div class="cart-item">
+          ${product.name} - ${money(product.price)}
+          <button onclick="removeFromCart(${index})">
+            Retirer
+          </button>
+        </div>
+      `;
+    }).join("");
+  }
+
+  const total = cart.reduce((sum, id) => {
+    const product = products.find(p => p.id === id);
+    return sum + product.price;
+  }, 0);
+
+  document.getElementById("total").textContent =
+    "Total : " + money(total);
 }
 
 function checkout() {
- if(cart.length === 0) {
-   alert("Ton panier est vide !");
- } else {
-   alert("Ton panier est prêt ! Le paiement et la livraison seront configurés dans une prochaine étape.");
- }
+  document.getElementById("checkout-message").textContent =
+    "La commande en ligne n'est pas encore activée. Le panier est une démonstration.";
 }
 
 showProducts();

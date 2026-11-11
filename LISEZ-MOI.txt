@@ -1,0 +1,15 @@
+FREE RIDER FINGERBOARDS — application web installable (PWA)
+
+CONTENU
+- index.html : boutique
+- manifest.webmanifest : nom et paramètres d'installation
+- sw.js : cache hors ligne de base
+- icon.svg : icône de l'application
+
+MISE EN LIGNE
+Pour installer l'application sur un téléphone, les fichiers doivent être publiés sur un hébergement HTTPS.
+Une fois le site publié :
+- Android (Chrome) : ouvrir le site, menu ⋮, puis « Installer l'application » ou « Ajouter à l'écran d'accueil ».
+- iPhone (Safari) : bouton Partager, puis « Sur l'écran d'accueil ».
+
+Le panier est une démonstration locale. Aucun paiement ou traitement de commande réel n'est activé.

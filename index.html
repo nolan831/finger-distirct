@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="FREE RIDER FINGERBOARDS — boutique de fingerboards.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>FREE RIDER FINGERBOARDS</title>
+<style>
+:root{--bg:#0c0c0e;--panel:#17171b;--muted:#a4a4ad;--red:#f04444;--white:#f7f7f8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,Arial,sans-serif}
+header{height:76px;padding:0 clamp(18px,5vw,70px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #29292e;position:sticky;top:0;background:#0c0c0ef2;backdrop-filter:blur(12px);z-index:5}
+.logo{font-weight:950;letter-spacing:1.8px;font-size:20px}.logo span{display:block;color:var(--red);font-size:10px;letter-spacing:4px;margin-top:3px}
+nav{display:flex;gap:24px;align-items:center}nav a{color:#ddd;text-decoration:none;font-size:13px}button{font:inherit;cursor:pointer;border:0}
+.cart-btn,.primary{background:var(--red);color:white;padding:12px 17px;border-radius:7px;font-weight:800}
+.cart-btn span{background:#fff;color:#111;border-radius:50%;padding:2px 7px;margin-left:6px}
+.hero{padding:76px clamp(18px,7vw,100px) 70px;display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;background:radial-gradient(ellipse at 80% 40%,#4a1518 0%,#191014 28%,#0c0c0e 68%)}
+.eyebrow{color:var(--red);font-weight:900;font-size:11px;letter-spacing:3px}.hero h1{font-size:clamp(42px,6vw,76px);line-height:.95;margin:18px 0;letter-spacing:-3px}.hero h1 em{color:var(--red);font-style:normal}.hero p{color:#b8b8c0;line-height:1.7;max-width:440px}.hero-art{min-height:290px;border:1px solid #3a2428;border-radius:16px;background:linear-gradient(135deg,#262329,#111);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.deck{width:72%;height:95px;border-radius:55px;background:linear-gradient(110deg,#e9e5dc,#a8a3a0 45%,#e4ded4);transform:rotate(-22deg);box-shadow:0 32px 45px #0009;position:relative}
+.deck:before{content:"FREE RIDER";position:absolute;inset:0;display:grid;place-items:center;color:#171719;font-weight:1000;letter-spacing:5px;font-size:clamp(13px,2vw,23px)}
+.deck:after{content:"";position:absolute;left:15%;right:15%;top:50%;height:2px;background:#d33;transform:rotate(0deg)}
+.truck{position:absolute;width:15px;height:140px;background:#aaa;border-radius:5px;left:28%;top:-23px;transform:rotate(90deg);box-shadow:0 0 0 3px #333}
+.truck.two{left:72%}
+.section{padding:65px clamp(18px,7vw,100px)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:25px}.section h2{font-size:32px;margin:8px 0}.sub{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{background:var(--panel);border:1px solid #29292e;border-radius:12px;overflow:hidden}.product-art{height:190px;display:grid;place-items:center;background:linear-gradient(145deg,#29272c,#111114);position:relative}
+.mini{width:52px;height:145px;border-radius:35px;transform:rotate(42deg);box-shadow:0 15px 22px #0008;border:5px solid #171719;position:relative}
+.mini:after{content:"";position:absolute;inset:12px 5px;border-radius:20px;border:2px solid #ffffff80}
+.mini.red{background:linear-gradient(#f55,#761a24)}.mini.blue{background:linear-gradient(#60a5fa,#172d69)}.mini.gold{background:linear-gradient(#f4d06f,#8e5720)}.mini.black{background:linear-gradient(#777,#161616)}
+.product-info{padding:16px}.product-info h3{margin:0 0 7px;font-size:16px}.product-info p{margin:0 0 14px;color:var(--muted);font-size:12px}.price-row{display:flex;align-items:center;justify-content:space-between;font-weight:900}.add{background:#29292f;color:white;border:1px solid #444;padding:9px 11px;border-radius:6px;font-size:12px}.add:hover{background:var(--red);border-color:var(--red)}
+.banner{margin:0 clamp(18px,7vw,100px) 65px;padding:32px;border:1px solid #39272a;border-radius:12px;background:linear-gradient(110deg,#251317,#171216);display:flex;align-items:center;justify-content:space-between;gap:20px}.banner h2{margin:0 0 7px}.banner p{margin:0;color:#bcb6b8;font-size:13px}
+footer{padding:28px clamp(18px,7vw,100px);border-top:1px solid #29292e;color:#85858e;font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.overlay{position:fixed;inset:0;background:#0009;z-index:10;display:none}.overlay.show{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(420px,100%);background:#151519;padding:24px;overflow:auto;box-shadow:-15px 0 50px #0008}.drawer-head{display:flex;justify-content:space-between;align-items:center}.close{background:#303036;color:#fff;border-radius:6px;padding:8px 12px}.cart-line{display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid #333;font-size:14px}.remove{background:none;color:#ff7777;font-size:12px}.total{display:flex;justify-content:space-between;font-weight:900;font-size:20px;margin:22px 0}.note{font-size:11px;color:#aaa;line-height:1.5}.empty{color:#aaa;padding:30px 0}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;padding-top:55px}.hero-art{min-height:230px}nav{gap:12px}}
+@media(max-width:520px){header{height:68px}.logo{font-size:16px}nav a{display:none}.hero h1{font-size:47px}.grid{gap:10px}.product-art{height:145px}.mini{height:110px;width:43px}.product-info{padding:12px}.product-info h3{font-size:14px}.add{padding:8px}.section{padding-top:48px;padding-bottom:48px}.banner{padding:22px;align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">FREE RIDER<span>FINGERBOARDS</span></div>
+  <nav><a href="#shop">Boutique</a><a href="#about">À propos</a><button class="cart-btn" onclick="openCart()">Panier <span id="count">0</span></button></nav>
+</header>
+<main>
+<section class="hero">
+ <div><div class="eyebrow">POUSSE TES LIMITES</div><h1>RIDE YOUR<br><em>OWN WAY.</em></h1><p>Découvre les fingerboards FREE RIDER : des mini-planches pour inventer tes tricks, créer ton style et rider partout.</p><a href="#shop"><button class="primary">DÉCOUVRIR LA COLLECTION</button></a></div>
+ <div class="hero-art" aria-label="Illustration d'un fingerboard"><div class="deck"><i class="truck"></i><i class="truck two"></i></div></div>
+</section>
+<section class="section" id="shop">
+ <div class="section-head"><div><div class="eyebrow">LA COLLECTION</div><h2>Nos fingerboards</h2><div class="sub">Choisis ton prochain setup.</div></div><div class="sub">Prix en dollars canadiens · CAD</div></div>
+ <div class="grid" id="products"></div>
+</section>
+<section class="banner" id="about"><div><h2>TON STYLE. TES TRICKS.</h2><p>FREE RIDER FINGERBOARDS — la passion du fingerboarding.</p></div><div class="eyebrow">#FREERIDER</div></section>
+</main>
+<footer><div>© 2026 FREE RIDER FINGERBOARDS</div><div>Prototype de boutique · Paiement réel non activé</div></footer>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><aside class="drawer"><div class="drawer-head"><h2>Ton panier</h2><button class="close" onclick="closeCart()">Fermer ✕</button></div><div id="cartItems"></div><div class="total"><span>Total</span><span id="total">$0.00 CAD</span></div><button class="primary" style="width:100%" onclick="checkout()">Continuer</button><p class="note">Ceci est une démonstration. Aucun paiement ni commande réelle n'est effectué.</p></aside></div>
+<script>
+const products=[
+ {id:1,name:"Street Beast",desc:"Graphisme street · deck seul",price:24.99,color:"red"},
+ {id:2,name:"Blue Horizon",desc:"Bleu électrique · deck seul",price:27.99,color:"blue"},
+ {id:3,name:"Golden Hour",desc:"Édition dorée · deck seul",price:29.99,color:"gold"},
+ {id:4,name:"Classic Black",desc:"Noir intemporel · deck seul",price:19.99,color:"black"}
+];
+let cart=[];
+const money=n=>n.toLocaleString("fr-CA",{style:"currency",currency:"CAD"});
+document.getElementById("products").innerHTML=products.map(p=>`
+ <article class="product"><div class="product-art"><div class="mini ${p.color}"></div></div>
+ <div class="product-info"><h3>${p.name}</h3><p>${p.desc}</p><div class="price-row"><span>${money(p.price)}</span><button class="add" onclick="add(${p.id})">+ Ajouter</button></div></div></article>`).join("");
+function add(id){cart.push(products.find(p=>p.id===id));renderCart();document.getElementById("count").textContent=cart.length}
+function removeItem(i){cart.splice(i,1);renderCart();document.getElementById("count").textContent=cart.length}
+function renderCart(){
+ const box=document.getElementById("cartItems");
+ box.innerHTML=cart.length?cart.map((p,i)=>`<div class="cart-line"><div><strong>${p.name}</strong><br><span style="color:#aaa">${money(p.price)}</span></div><button class="remove" onclick="removeItem(${i})">Retirer</button></div>`).join(""):'<div class="empty">Ton panier est vide pour le moment.</div>';
+ document.getElementById("total").textContent=money(cart.reduce((s,p)=>s+p.price,0));
+}
+function openCart(){document.getElementById("overlay").classList.add("show");renderCart()}
+function closeCart(){document.getElementById("overlay").classList.remove("show")}
+function checkout(){alert("Merci ! Cette boutique est un prototype : le paiement en ligne n'est pas encore configuré.");}
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>

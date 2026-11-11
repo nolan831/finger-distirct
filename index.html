@@ -83,5 +83,42 @@ if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
 }
 </script>
-</body>
+<div id="free-rider-shop" style="background:#171717;color:white;padding:20px;border-radius:15px;font-family:Arial;text-align:center;margin:20px 0;">
+  <h2>🛹 FREE RIDER SHOP</h2>
+  <h3>🪙 Pièces : <span id="fr-coins">1000</span></h3>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+    <button onclick="frBuy('Fingerboard Pro',300)">🛹 Fingerboard Pro - 300</button>
+    <button onclick="frBuy('Roues spéciales',150)">🛞 Roues spéciales - 150</button>
+    <button onclick="frBuy('Planche graffiti',200)">🎨 Planche graffiti - 200</button>
+    <button onclick="frBuy('Rampe spéciale',400)">🏁 Rampe spéciale - 400</button>
+  </div>
+  <h3>🎒 Mon inventaire</h3>
+  <ul id="fr-inventory"></ul>
+</div>
+
+<script>
+let frCoins = Number(localStorage.getItem("frCoins") || 1000);
+let frInventory = JSON.parse(localStorage.getItem("frInventory") || "[]");
+
+function frUpdate() {
+  document.getElementById("fr-coins").textContent = frCoins;
+  document.getElementById("fr-inventory").innerHTML =
+    frInventory.map(item => "<li>" + item + "</li>").join("");
+}
+
+function frBuy(name, price) {
+  if (frCoins < price) {
+    alert("Pas assez de pièces !");
+    return;
+  }
+  frCoins -= price;
+  frInventory.push(name);
+  localStorage.setItem("frCoins", frCoins);
+  localStorage.setItem("frInventory", JSON.stringify(frInventory));
+  frUpdate();
+  alert("Bravo ! Tu as acheté " + name + " !");
+}
+
+frUpdate();
+</script>/body>
 </html>
